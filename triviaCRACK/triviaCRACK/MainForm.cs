@@ -1,5 +1,4 @@
-﻿using Oracle.ManagedDataAccess.Client;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,38 +12,35 @@ namespace triviaCRACK
 {
     public partial class MainForm : Form
     {
-        string con = "Data Source=(DESCRIPTION="
-        + "(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)"
-        + "(HOST=mercure.clg.qc.ca)(PORT=1521)))"
-        + "(CONNECT_DATA=(SERVICE_NAME=ORCL.clg.qc.ca)));"
-        + "User Id=mouranie;Password=ORACLE1";
-        OracleConnection objConn;
         public MainForm()
         {
             InitializeComponent();
-            Connect();
-            DrawIt();
+            
         }
 
-        private void DrawIt()
+      
+        private void DrawCircle()
         {
             System.Drawing.Graphics graphics = this.CreateGraphics();
-            System.Drawing.Rectangle rectangle = new System.Drawing.Rectangle(
-               50, 50, 150, 150);
-            graphics.DrawEllipse(System.Drawing.Pens.Black, rectangle);
-            graphics.DrawRectangle(System.Drawing.Pens.Red, rectangle);
+            graphics.DrawEllipse(System.Drawing.Pens.Black, 200, 0, 400, 400);
+            graphics.DrawLine(Pens.Black, 200, 200, 600, 200);
+            graphics.DrawLine(Pens.Black, 400, 0, 400, 400);
         }
+      
 
-        private void Connect()
-        {
-            objConn = new OracleConnection(con);
-            objConn.Open();
-            MessageBox.Show(objConn.State.ToString());
-
-        }
         private void button1_Click(object sender, EventArgs e)
         {
-            DrawIt();
+         
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+        
+        }
+
+        private void MainForm_Paint(object sender, PaintEventArgs e)
+        {
+            DrawCircle();
         }
     }
 }

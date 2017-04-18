@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace triviaCRACK
 {
+    
     public partial class F_Acceuil : Form
     {
         public F_Acceuil()
@@ -22,6 +23,25 @@ namespace triviaCRACK
         {
             MainForm form1 = new MainForm();
             form1.Show();
+            Game.NbrPlayers = 2;
+            this.Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+            MainForm form1 = new MainForm();
+            form1.Show();
+            Game.NbrPlayers = 3;
+            this.Hide();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            MainForm form1 = new MainForm();
+            form1.Show();
+            Game.NbrPlayers = 4;
+            this.Hide();
         }
     }
 }

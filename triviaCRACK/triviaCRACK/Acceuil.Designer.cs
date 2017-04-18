@@ -40,13 +40,13 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(72, 46);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(453, 24);
+            this.label1.Size = new System.Drawing.Size(454, 24);
             this.label1.TabIndex = 0;
-            this.label1.Text = "À combien de joueur désirer vous jouez cette partie?";
+            this.label1.Text = "À combien de joueur désirez-vous jouer cette partie?";
             // 
             // button2
             // 
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Location = new System.Drawing.Point(101, 112);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(81, 62);
@@ -57,23 +57,25 @@
             // 
             // button3
             // 
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Location = new System.Drawing.Point(243, 112);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(81, 62);
             this.button3.TabIndex = 3;
             this.button3.Text = "3";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Location = new System.Drawing.Point(384, 112);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(81, 62);
             this.button4.TabIndex = 4;
             this.button4.Text = "4";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // F_Acceuil
             // 
