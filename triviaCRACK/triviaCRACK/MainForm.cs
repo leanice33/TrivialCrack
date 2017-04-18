@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Oracle.ManagedDataAccess.Client;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,16 @@ namespace triviaCRACK
 {
     public partial class MainForm : Form
     {
+        string con = "Data Source=(DESCRIPTION="
+        + "(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)"
+        + "(HOST=mercure.clg.qc.ca)(PORT=1521)))"
+        + "(CONNECT_DATA=(SERVICE_NAME=ORCL.clg.qc.ca)));"
+        + "User Id=mouranie;Password=ORACLE1";
+        OracleConnection objConn;
         public MainForm()
         {
             InitializeComponent();
+            Connect();
             DrawIt();
         }
 
@@ -27,6 +35,13 @@ namespace triviaCRACK
             graphics.DrawRectangle(System.Drawing.Pens.Red, rectangle);
         }
 
+        private void Connect()
+        {
+            objConn = new OracleConnection(con);
+            objConn.Open();
+            MessageBox.Show(objConn.State.ToString());
+
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             DrawIt();
