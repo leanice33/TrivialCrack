@@ -29,3 +29,15 @@ C:\Users\201133771\Desktop\TrivialCrack-master\triviaCRACK\triviaCRACK\obj\Debug
 C:\Users\201133771\Desktop\TrivialCrack-master\triviaCRACK\triviaCRACK\obj\Debug\triviaCRACK.MainForm.resources
 C:\Users\201133771\Desktop\TrivialCrack-master\triviaCRACK\triviaCRACK\obj\Debug\triviaCRACK.Properties.Resources.resources
 C:\Users\201133771\Desktop\TrivialCrack-master\triviaCRACK\triviaCRACK\obj\Debug\triviaCRACK.csproj.GenerateResource.Cache
+C:\Users\201133771\Desktop\triviaCRACK\triviaCRACK\bin\Debug\triviaCRACK.exe.config
+C:\Users\201133771\Desktop\triviaCRACK\triviaCRACK\obj\Debug\triviaCRACK.exe
+C:\Users\201133771\Desktop\triviaCRACK\triviaCRACK\obj\Debug\triviaCRACK.pdb
+C:\Users\201133771\Desktop\triviaCRACK\triviaCRACK\bin\Debug\triviaCRACK.exe
+C:\Users\201133771\Desktop\triviaCRACK\triviaCRACK\bin\Debug\triviaCRACK.pdb
+C:\Users\201133771\Desktop\triviaCRACK\triviaCRACK\bin\Debug\Oracle.ManagedDataAccess.dll
+C:\Users\201133771\Desktop\triviaCRACK\triviaCRACK\obj\Debug\triviaCRACK.csprojResolveAssemblyReference.cache
+C:\Users\201133771\Desktop\triviaCRACK\triviaCRACK\obj\Debug\triviaCRACK.F_Acceuil.resources
+C:\Users\201133771\Desktop\triviaCRACK\triviaCRACK\obj\Debug\triviaCRACK.MainForm.resources
+C:\Users\201133771\Desktop\triviaCRACK\triviaCRACK\obj\Debug\triviaCRACK.Properties.Resources.resources
+C:\Users\201133771\Desktop\triviaCRACK\triviaCRACK\obj\Debug\triviaCRACK.Username.resources
+C:\Users\201133771\Desktop\triviaCRACK\triviaCRACK\obj\Debug\triviaCRACK.csproj.GenerateResource.Cache
