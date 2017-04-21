@@ -45,12 +45,31 @@
             this.GB_P3 = new System.Windows.Forms.GroupBox();
             this.GB_P4 = new System.Windows.Forms.GroupBox();
             this.lb_question = new System.Windows.Forms.Label();
+            this.BTN_CHOIX1 = new System.Windows.Forms.Button();
+            this.BTN_CHOIX2 = new System.Windows.Forms.Button();
+            this.BTN_CHOIX3 = new System.Windows.Forms.Button();
+            this.BTN_CHOIX4 = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.LBL_TOURAQUELJOUEUR = new System.Windows.Forms.Label();
+            this.progressBar4 = new System.Windows.Forms.ProgressBar();
+            this.progressBar2 = new System.Windows.Forms.ProgressBar();
+            this.progressBar3 = new System.Windows.Forms.ProgressBar();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Yellow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Blue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB_White)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB_RED)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Green)).BeginInit();
+            this.GB_P1.SuspendLayout();
+            this.GB_P2.SuspendLayout();
+            this.GB_P3.SuspendLayout();
+            this.GB_P4.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -112,27 +131,31 @@
             // 
             // GB_P1
             // 
-            this.GB_P1.Location = new System.Drawing.Point(72, 573);
+            this.GB_P1.Controls.Add(this.label1);
+            this.GB_P1.Controls.Add(this.progressBar1);
+            this.GB_P1.Location = new System.Drawing.Point(474, 300);
             this.GB_P1.Name = "GB_P1";
-            this.GB_P1.Size = new System.Drawing.Size(128, 128);
+            this.GB_P1.Size = new System.Drawing.Size(128, 63);
             this.GB_P1.TabIndex = 1;
             this.GB_P1.TabStop = false;
             this.GB_P1.Text = "PlayerName1";
             // 
             // GB_P2
             // 
-            this.GB_P2.Location = new System.Drawing.Point(212, 573);
+            this.GB_P2.Controls.Add(this.label2);
+            this.GB_P2.Controls.Add(this.progressBar2);
+            this.GB_P2.Location = new System.Drawing.Point(474, 381);
             this.GB_P2.Name = "GB_P2";
-            this.GB_P2.Size = new System.Drawing.Size(128, 128);
+            this.GB_P2.Size = new System.Drawing.Size(128, 63);
             this.GB_P2.TabIndex = 2;
             this.GB_P2.TabStop = false;
             this.GB_P2.Text = "PlayerName2";
             // 
             // BTN_Tourner
             // 
-            this.BTN_Tourner.Location = new System.Drawing.Point(507, 243);
+            this.BTN_Tourner.Location = new System.Drawing.Point(457, 205);
             this.BTN_Tourner.Name = "BTN_Tourner";
-            this.BTN_Tourner.Size = new System.Drawing.Size(114, 51);
+            this.BTN_Tourner.Size = new System.Drawing.Size(159, 78);
             this.BTN_Tourner.TabIndex = 3;
             this.BTN_Tourner.Text = "Faire tourner";
             this.BTN_Tourner.UseVisualStyleBackColor = true;
@@ -185,18 +208,22 @@
             // 
             // GB_P3
             // 
-            this.GB_P3.Location = new System.Drawing.Point(359, 573);
+            this.GB_P3.Controls.Add(this.label3);
+            this.GB_P3.Controls.Add(this.progressBar3);
+            this.GB_P3.Location = new System.Drawing.Point(474, 468);
             this.GB_P3.Name = "GB_P3";
-            this.GB_P3.Size = new System.Drawing.Size(128, 128);
+            this.GB_P3.Size = new System.Drawing.Size(128, 63);
             this.GB_P3.TabIndex = 3;
             this.GB_P3.TabStop = false;
             this.GB_P3.Text = "PlayerName3";
             // 
             // GB_P4
             // 
-            this.GB_P4.Location = new System.Drawing.Point(493, 573);
+            this.GB_P4.Controls.Add(this.label4);
+            this.GB_P4.Controls.Add(this.progressBar4);
+            this.GB_P4.Location = new System.Drawing.Point(474, 551);
             this.GB_P4.Name = "GB_P4";
-            this.GB_P4.Size = new System.Drawing.Size(128, 128);
+            this.GB_P4.Size = new System.Drawing.Size(128, 62);
             this.GB_P4.TabIndex = 4;
             this.GB_P4.TabStop = false;
             this.GB_P4.Text = "PlayerName4";
@@ -204,21 +231,151 @@
             // lb_question
             // 
             this.lb_question.AutoSize = true;
-            this.lb_question.Location = new System.Drawing.Point(77, 243);
+            this.lb_question.Location = new System.Drawing.Point(161, 45);
             this.lb_question.Name = "lb_question";
             this.lb_question.Size = new System.Drawing.Size(61, 13);
             this.lb_question.TabIndex = 9;
             this.lb_question.Text = "lb_question";
             this.lb_question.Visible = false;
             // 
+            // BTN_CHOIX1
+            // 
+            this.BTN_CHOIX1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BTN_CHOIX1.Location = new System.Drawing.Point(46, 92);
+            this.BTN_CHOIX1.Name = "BTN_CHOIX1";
+            this.BTN_CHOIX1.Size = new System.Drawing.Size(298, 33);
+            this.BTN_CHOIX1.TabIndex = 10;
+            this.BTN_CHOIX1.Text = "btn_choix1";
+            this.BTN_CHOIX1.UseVisualStyleBackColor = true;
+            // 
+            // BTN_CHOIX2
+            // 
+            this.BTN_CHOIX2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BTN_CHOIX2.Location = new System.Drawing.Point(46, 151);
+            this.BTN_CHOIX2.Name = "BTN_CHOIX2";
+            this.BTN_CHOIX2.Size = new System.Drawing.Size(298, 33);
+            this.BTN_CHOIX2.TabIndex = 11;
+            this.BTN_CHOIX2.Text = "choix2";
+            this.BTN_CHOIX2.UseVisualStyleBackColor = true;
+            // 
+            // BTN_CHOIX3
+            // 
+            this.BTN_CHOIX3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BTN_CHOIX3.Location = new System.Drawing.Point(46, 213);
+            this.BTN_CHOIX3.Name = "BTN_CHOIX3";
+            this.BTN_CHOIX3.Size = new System.Drawing.Size(298, 33);
+            this.BTN_CHOIX3.TabIndex = 12;
+            this.BTN_CHOIX3.Text = "choix3";
+            this.BTN_CHOIX3.UseVisualStyleBackColor = true;
+            // 
+            // BTN_CHOIX4
+            // 
+            this.BTN_CHOIX4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BTN_CHOIX4.Location = new System.Drawing.Point(46, 271);
+            this.BTN_CHOIX4.Name = "BTN_CHOIX4";
+            this.BTN_CHOIX4.Size = new System.Drawing.Size(298, 33);
+            this.BTN_CHOIX4.TabIndex = 13;
+            this.BTN_CHOIX4.Text = "choix4";
+            this.BTN_CHOIX4.UseVisualStyleBackColor = true;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.lb_question);
+            this.panel2.Controls.Add(this.BTN_CHOIX4);
+            this.panel2.Controls.Add(this.BTN_CHOIX1);
+            this.panel2.Controls.Add(this.BTN_CHOIX3);
+            this.panel2.Controls.Add(this.BTN_CHOIX2);
+            this.panel2.Location = new System.Drawing.Point(65, 300);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(390, 349);
+            this.panel2.TabIndex = 14;
+            // 
+            // LBL_TOURAQUELJOUEUR
+            // 
+            this.LBL_TOURAQUELJOUEUR.AutoSize = true;
+            this.LBL_TOURAQUELJOUEUR.Location = new System.Drawing.Point(194, 243);
+            this.LBL_TOURAQUELJOUEUR.Name = "LBL_TOURAQUELJOUEUR";
+            this.LBL_TOURAQUELJOUEUR.Size = new System.Drawing.Size(141, 13);
+            this.LBL_TOURAQUELJOUEUR.TabIndex = 15;
+            this.LBL_TOURAQUELJOUEUR.Text = "lb_designe le joueur qui joue";
+            // 
+            // progressBar4
+            // 
+            this.progressBar4.Location = new System.Drawing.Point(6, 25);
+            this.progressBar4.Name = "progressBar4";
+            this.progressBar4.Size = new System.Drawing.Size(116, 13);
+            this.progressBar4.TabIndex = 17;
+            // 
+            // progressBar2
+            // 
+            this.progressBar2.Location = new System.Drawing.Point(6, 25);
+            this.progressBar2.Name = "progressBar2";
+            this.progressBar2.Size = new System.Drawing.Size(116, 13);
+            this.progressBar2.TabIndex = 17;
+            // 
+            // progressBar3
+            // 
+            this.progressBar3.Location = new System.Drawing.Point(6, 25);
+            this.progressBar3.Name = "progressBar3";
+            this.progressBar3.Size = new System.Drawing.Size(116, 13);
+            this.progressBar3.TabIndex = 17;
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(6, 25);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(116, 13);
+            this.progressBar1.TabIndex = 17;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(104, 41);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(19, 13);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "/5";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(103, 41);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(19, 13);
+            this.label2.TabIndex = 18;
+            this.label2.Text = "/5";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(104, 41);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(19, 13);
+            this.label3.TabIndex = 18;
+            this.label3.Text = "/5";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(104, 41);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(19, 13);
+            this.label4.TabIndex = 18;
+            this.label4.Text = "/5";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(718, 747);
-            this.Controls.Add(this.lb_question);
+            this.ClientSize = new System.Drawing.Size(645, 656);
+            this.Controls.Add(this.LBL_TOURAQUELJOUEUR);
             this.Controls.Add(this.GB_P4);
             this.Controls.Add(this.GB_P3);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.LBL_Yellow);
             this.Controls.Add(this.LBL_Blue);
             this.Controls.Add(this.LBL_White);
@@ -236,6 +393,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.PB_White)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB_RED)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Green)).EndInit();
+            this.GB_P1.ResumeLayout(false);
+            this.GB_P1.PerformLayout();
+            this.GB_P2.ResumeLayout(false);
+            this.GB_P2.PerformLayout();
+            this.GB_P3.ResumeLayout(false);
+            this.GB_P3.PerformLayout();
+            this.GB_P4.ResumeLayout(false);
+            this.GB_P4.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -260,5 +427,19 @@
         private System.Windows.Forms.GroupBox GB_P3;
         private System.Windows.Forms.GroupBox GB_P4;
         private System.Windows.Forms.Label lb_question;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ProgressBar progressBar2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ProgressBar progressBar3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ProgressBar progressBar4;
+        private System.Windows.Forms.Button BTN_CHOIX1;
+        private System.Windows.Forms.Button BTN_CHOIX2;
+        private System.Windows.Forms.Button BTN_CHOIX3;
+        private System.Windows.Forms.Button BTN_CHOIX4;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label LBL_TOURAQUELJOUEUR;
     }
 }
