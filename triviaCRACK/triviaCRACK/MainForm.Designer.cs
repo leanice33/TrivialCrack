@@ -44,6 +44,7 @@
             this.LBL_Yellow = new System.Windows.Forms.Label();
             this.GB_P3 = new System.Windows.Forms.GroupBox();
             this.GB_P4 = new System.Windows.Forms.GroupBox();
+            this.lb_question = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Yellow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Blue)).BeginInit();
@@ -200,11 +201,22 @@
             this.GB_P4.TabStop = false;
             this.GB_P4.Text = "PlayerName4";
             // 
+            // lb_question
+            // 
+            this.lb_question.AutoSize = true;
+            this.lb_question.Location = new System.Drawing.Point(77, 243);
+            this.lb_question.Name = "lb_question";
+            this.lb_question.Size = new System.Drawing.Size(61, 13);
+            this.lb_question.TabIndex = 9;
+            this.lb_question.Text = "lb_question";
+            this.lb_question.Visible = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(718, 747);
+            this.Controls.Add(this.lb_question);
             this.Controls.Add(this.GB_P4);
             this.Controls.Add(this.GB_P3);
             this.Controls.Add(this.LBL_Yellow);
@@ -247,5 +259,6 @@
         private System.Windows.Forms.Label LBL_Yellow;
         private System.Windows.Forms.GroupBox GB_P3;
         private System.Windows.Forms.GroupBox GB_P4;
+        private System.Windows.Forms.Label lb_question;
     }
 }
