@@ -105,6 +105,43 @@ namespace triviaCRACK
             LBL_White.Hide();
             LBL_Blue.Hide();
         }
+        //doesn't work ??
+        private void ShowQuestion(string x)
+        {
+            try
+            {
+                //wrong parametre type??
+                OracleCommand Oracmd = new OracleCommand("GESTIONQUESTION", objConn);
+                Oracmd.CommandText = "GESTIONQUESTION.afficherquestion";
+                Oracmd.CommandType = CommandType.StoredProcedure;
+                //sending char to function
+                OracleParameter OraDesc = new OracleParameter("pcat", OracleDbType.Char);
+                OraDesc.Value = x;
+                OraDesc.Direction = ParameterDirection.Input;
+                Oracmd.Parameters.Add(OraDesc);
+
+                //function returns int question number
+                OracleParameter orapamres = new OracleParameter("RES",
+                OracleDbType.Int32);
+                orapamres.Direction = ParameterDirection.Output;
+                Oracmd.Parameters.Add(orapamres);
+                //TODO call function getquestion, send it the number we got from the first function
+                //and replace lb_question.Text by the question and make it visible
+
+                OracleDataReader Oraread = Oracmd.ExecuteReader();
+                while (Oraread.Read())
+                {
+                    variables.numQuestion = Oraread.GetString(0);
+                }
+
+
+            }
+            catch (Exception se)
+            {
+                MessageBox.Show(se.Message.ToString());
+            }
+        }
+
         private void BTN_Tourner_Click(object sender, EventArgs e)
         {
             Random r = new Random();
@@ -117,26 +154,38 @@ namespace triviaCRACK
                 {
                     HideAllCats();
                     LBL_Green.Show();
+                    if(i== rInt - 1)
+                        ShowQuestion("V");
                 }
                 if (j == 1)
                 {
                     HideAllCats();
                     LBL_Red.Show();
+                    //todo R category
+                    if (i == rInt - 1)
+                        ShowQuestion("V");
                 }
                 if (j == 2)
                 {
                     HideAllCats();
                     LBL_White.Show();
+                    //todo random
+                    if (i == rInt - 1)
+                        ShowQuestion("V");
                 }
                 if (j == 3)
                 {
                     HideAllCats();
                     LBL_Blue.Show();
+                    if (i == rInt - 1)
+                        ShowQuestion("B");
                 }
                 if (j == 4)
                 {
                     HideAllCats();
                     LBL_Yellow.Show();
+                    if (i == rInt - 1)
+                        ShowQuestion("J");
                 }
 
 
