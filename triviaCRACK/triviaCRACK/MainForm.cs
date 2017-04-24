@@ -94,6 +94,10 @@ namespace triviaCRACK
         {
             objConn = new OracleConnection(con);
             objConn.Open();
+            string query = "truncate table joueurcrack";
+            //clear table 
+            OracleCommand cmd = new OracleCommand(query, objConn);
+            cmd.ExecuteNonQuery();
             MessageBox.Show(objConn.State.ToString());
 
         }
@@ -105,43 +109,88 @@ namespace triviaCRACK
             LBL_White.Hide();
             LBL_Blue.Hide();
         }
-        //doesn't work ??
+        //works
         private void ShowQuestion(string x)
         {
+            //x = category
             try
             {
-                //wrong parametre type??
-                OracleCommand Oracmd = new OracleCommand("GESTIONQUESTION", objConn);
-                Oracmd.CommandText = "GESTIONQUESTION.afficherquestion";
-                Oracmd.CommandType = CommandType.StoredProcedure;
-                //sending char to function
-                OracleParameter OraDesc = new OracleParameter("pcat", OracleDbType.Char);
-                OraDesc.Value = x;
-                OraDesc.Direction = ParameterDirection.Input;
-                Oracmd.Parameters.Add(OraDesc);
+                OracleCommand cmd = new OracleCommand();
 
-                //function returns int question number
-                OracleParameter orapamres = new OracleParameter("RES",
-                OracleDbType.Int32);
-                orapamres.Direction = ParameterDirection.Output;
-                Oracmd.Parameters.Add(orapamres);
-                //TODO call function getquestion, send it the number we got from the first function
-                //and replace lb_question.Text by the question and make it visible
+                cmd.Connection = objConn;
+                cmd.CommandText = "GESTIONQUESTION.afficherquestion";
+                cmd.CommandType = CommandType.StoredProcedure;
 
-                OracleDataReader Oraread = Oracmd.ExecuteReader();
-                while (Oraread.Read())
-                {
-                    variables.numQuestion = Oraread.GetString(0);
-                }
+                cmd.Parameters.Add("enonce", OracleDbType.Varchar2, 32767);
+                cmd.Parameters["enonce"].Direction = ParameterDirection.ReturnValue;
 
+                cmd.Parameters.Add("pcat", OracleDbType.Char);
+                cmd.Parameters["pcat"].Value = x;
+
+                cmd.ExecuteNonQuery();
+                string bval = cmd.Parameters["enonce"].Value.ToString();
+
+                lb_question.Text = bval;
+                lb_question.Visible = true;
+                ShowReponses(bval);
 
             }
             catch (Exception se)
             {
                 MessageBox.Show(se.Message.ToString());
-            }
+            }
+
         }
 
+        //doesnt work yet????
+        private void ShowReponses(string x)
+        {
+            //x = question
+            try
+            {
+                OracleCommand cmd = new OracleCommand();
+
+                //get question
+                cmd.Connection = objConn;
+                cmd.CommandText = "GESTIONQUESTION.getquestion";
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add("numquestion", OracleDbType.Char, 4);
+                cmd.Parameters["numquestion"].Direction = ParameterDirection.ReturnValue;
+
+                cmd.Parameters.Add("enonce", OracleDbType.Varchar2, 32767);
+                cmd.Parameters["enonce"].Value = x;
+
+                //error here----------
+                cmd.ExecuteNonQuery();
+                string numquestion = cmd.Parameters["numquestion"].Value.ToString();
+
+                cmd.Dispose();
+
+                //get answers
+                cmd.Connection = objConn;
+                cmd.CommandText = "GESTIONQUESTION.getreponce";
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add("enoncerep", OracleDbType.RefCursor);
+                cmd.Parameters["enoncerep"].Direction = ParameterDirection.ReturnValue;
+
+                cmd.Parameters.Add("numquestion", OracleDbType.Char, 4);
+                cmd.Parameters["numquestion"].Value = numquestion;
+
+                cmd.ExecuteNonQuery();
+
+                string enoncerep = cmd.Parameters["enoncerep"].Value.ToString();
+
+                MessageBox.Show(enoncerep);
+
+            }
+            catch (Exception se)
+            {
+                MessageBox.Show(se.Message.ToString());
+            }
+            
+        }
         private void BTN_Tourner_Click(object sender, EventArgs e)
         {
             Random r = new Random();
@@ -161,7 +210,7 @@ namespace triviaCRACK
                 {
                     HideAllCats();
                     LBL_Red.Show();
-                    //todo R category
+                    //todo Red category in db
                     if (i == rInt - 1)
                         ShowQuestion("V");
                 }
@@ -169,7 +218,7 @@ namespace triviaCRACK
                 {
                     HideAllCats();
                     LBL_White.Show();
-                    //todo random
+                    //todo choose any category
                     if (i == rInt - 1)
                         ShowQuestion("V");
                 }
