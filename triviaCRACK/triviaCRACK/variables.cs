@@ -14,6 +14,10 @@ namespace triviaCRACK
         public static int CurrentChoice = 0;
         //Name List
         public static List<string> names = new List<string>();
+        //answer list
+        public static List<string> answers = new List<string>();
+        //answers num
+        public static List<string> answersNum = new List<string>();
         //num question
         public static string numQuestion;
     }

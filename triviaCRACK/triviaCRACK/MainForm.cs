@@ -142,7 +142,7 @@ namespace triviaCRACK
 
         }
 
-        //doesnt work yet????
+        //works
         private void ShowReponses(string x)
         {
             //x = question
@@ -150,40 +150,68 @@ namespace triviaCRACK
             {
                 OracleCommand cmd = new OracleCommand();
 
-                //get question
+                //get question number ---- works
                 cmd.Connection = objConn;
                 cmd.CommandText = "GESTIONQUESTION.getquestion";
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.Add("numquestion", OracleDbType.Char, 4);
+                cmd.Parameters.Add("numquestion", OracleDbType.Char, 8);
                 cmd.Parameters["numquestion"].Direction = ParameterDirection.ReturnValue;
 
-                cmd.Parameters.Add("enonce", OracleDbType.Varchar2, 32767);
-                cmd.Parameters["enonce"].Value = x;
+                cmd.Parameters.Add("enonce", OracleDbType.Varchar2, 255);
+                cmd.Parameters["enonce"].Value = "" + x + "";
 
-                //error here----------
+                
                 cmd.ExecuteNonQuery();
                 string numquestion = cmd.Parameters["numquestion"].Value.ToString();
+                //remove whitespace
+                numquestion = numquestion.Replace(" ", "");
 
-                cmd.Dispose();
-
-                //get answers
+                cmd = new OracleCommand();
+                //get answers --- works
                 cmd.Connection = objConn;
                 cmd.CommandText = "GESTIONQUESTION.getreponce";
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.Add("enoncerep", OracleDbType.RefCursor);
-                cmd.Parameters["enoncerep"].Direction = ParameterDirection.ReturnValue;
+                cmd.Parameters.Add("resultat", OracleDbType.RefCursor);
+                cmd.Parameters["resultat"].Direction = ParameterDirection.ReturnValue;
 
-                cmd.Parameters.Add("numquestion", OracleDbType.Char, 4);
-                cmd.Parameters["numquestion"].Value = numquestion;
+                cmd.Parameters.Add("pnumquestion", OracleDbType.Char);
+                cmd.Parameters["pnumquestion"].Value = numquestion.ToString();
 
-                cmd.ExecuteNonQuery();
-
-                string enoncerep = cmd.Parameters["enoncerep"].Value.ToString();
-
-                MessageBox.Show(enoncerep);
-
+                //no more error----------
+                OracleDataReader oraread;
+                oraread = cmd.ExecuteReader();
+                while (oraread.Read())
+                {
+                    variables.answers.Add(oraread.GetString(1));
+                    //todo getstring(0) aka answer's number into answersNum list to check for correct answer later
+                }
+                //changing buttons text to answers
+                for(int i = 0; i < variables.answers.Count; ++i)
+                {
+                    switch (i)
+                    {
+                        case 0:
+                            BTN_CHOIX1.Text = variables.answers[i];
+                            BTN_CHOIX1.Visible = true;
+                            break;
+                        case 1:
+                            BTN_CHOIX2.Text = variables.answers[i];
+                            BTN_CHOIX2.Visible = true;
+                            break;
+                        case 2:
+                            BTN_CHOIX3.Text = variables.answers[i];
+                            BTN_CHOIX3.Visible = true;
+                            BTN_CHOIX4.Visible = false;
+                            break;
+                        case 3:
+                            BTN_CHOIX4.Text = variables.answers[i];
+                            BTN_CHOIX4.Visible = true;
+                            break;                    
+                    }
+                }
+                variables.answers.Clear();
             }
             catch (Exception se)
             {
@@ -210,9 +238,8 @@ namespace triviaCRACK
                 {
                     HideAllCats();
                     LBL_Red.Show();
-                    //todo Red category in db
                     if (i == rInt - 1)
-                        ShowQuestion("V");
+                        ShowQuestion("R");
                 }
                 if (j == 2)
                 {

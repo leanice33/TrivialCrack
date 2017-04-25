@@ -312,40 +312,44 @@
             this.BTN_CHOIX1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BTN_CHOIX1.Location = new System.Drawing.Point(46, 92);
             this.BTN_CHOIX1.Name = "BTN_CHOIX1";
-            this.BTN_CHOIX1.Size = new System.Drawing.Size(298, 33);
+            this.BTN_CHOIX1.Size = new System.Drawing.Size(298, 52);
             this.BTN_CHOIX1.TabIndex = 10;
             this.BTN_CHOIX1.Text = "btn_choix1";
             this.BTN_CHOIX1.UseVisualStyleBackColor = true;
+            this.BTN_CHOIX1.Visible = false;
             // 
             // BTN_CHOIX2
             // 
             this.BTN_CHOIX2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BTN_CHOIX2.Location = new System.Drawing.Point(46, 151);
             this.BTN_CHOIX2.Name = "BTN_CHOIX2";
-            this.BTN_CHOIX2.Size = new System.Drawing.Size(298, 33);
+            this.BTN_CHOIX2.Size = new System.Drawing.Size(298, 52);
             this.BTN_CHOIX2.TabIndex = 11;
             this.BTN_CHOIX2.Text = "choix2";
             this.BTN_CHOIX2.UseVisualStyleBackColor = true;
+            this.BTN_CHOIX2.Visible = false;
             // 
             // BTN_CHOIX3
             // 
             this.BTN_CHOIX3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BTN_CHOIX3.Location = new System.Drawing.Point(46, 213);
             this.BTN_CHOIX3.Name = "BTN_CHOIX3";
-            this.BTN_CHOIX3.Size = new System.Drawing.Size(298, 33);
+            this.BTN_CHOIX3.Size = new System.Drawing.Size(298, 52);
             this.BTN_CHOIX3.TabIndex = 12;
             this.BTN_CHOIX3.Text = "choix3";
             this.BTN_CHOIX3.UseVisualStyleBackColor = true;
+            this.BTN_CHOIX3.Visible = false;
             // 
             // BTN_CHOIX4
             // 
             this.BTN_CHOIX4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BTN_CHOIX4.Location = new System.Drawing.Point(46, 271);
             this.BTN_CHOIX4.Name = "BTN_CHOIX4";
-            this.BTN_CHOIX4.Size = new System.Drawing.Size(298, 33);
+            this.BTN_CHOIX4.Size = new System.Drawing.Size(298, 52);
             this.BTN_CHOIX4.TabIndex = 13;
             this.BTN_CHOIX4.Text = "choix4";
             this.BTN_CHOIX4.UseVisualStyleBackColor = true;
+            this.BTN_CHOIX4.Visible = false;
             // 
             // panel2
             // 
