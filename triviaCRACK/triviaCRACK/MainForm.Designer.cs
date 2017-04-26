@@ -55,6 +55,7 @@
             this.BTN_CHOIX4 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.LBL_TOURAQUELJOUEUR = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Yellow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Blue)).BeginInit();
@@ -330,17 +331,27 @@
             // LBL_TOURAQUELJOUEUR
             // 
             this.LBL_TOURAQUELJOUEUR.AutoSize = true;
-            this.LBL_TOURAQUELJOUEUR.Location = new System.Drawing.Point(194, 243);
+            this.LBL_TOURAQUELJOUEUR.Location = new System.Drawing.Point(87, 238);
             this.LBL_TOURAQUELJOUEUR.Name = "LBL_TOURAQUELJOUEUR";
             this.LBL_TOURAQUELJOUEUR.Size = new System.Drawing.Size(141, 13);
             this.LBL_TOURAQUELJOUEUR.TabIndex = 15;
             this.LBL_TOURAQUELJOUEUR.Text = "lb_designe le joueur qui joue";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(331, 238);
+            this.label1.MaximumSize = new System.Drawing.Size(250, 100);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 13);
+            this.label1.TabIndex = 14;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(645, 656);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.LBL_TOURAQUELJOUEUR);
             this.Controls.Add(this.GB_P4);
             this.Controls.Add(this.GB_P3);
@@ -402,5 +413,6 @@
         private System.Windows.Forms.Button BTN_CHOIX4;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label LBL_TOURAQUELJOUEUR;
+        private System.Windows.Forms.Label label1;
     }
 }

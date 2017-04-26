@@ -47,7 +47,7 @@ namespace triviaCRACK
                         case 4:
                             LBL_TOURAQUELJOUEUR.Text = "Joueur 4";
                             break;
-                    }
+                    }                  
                 }            
             });
         }
@@ -245,6 +245,7 @@ namespace triviaCRACK
         }
         private void BTN_Tourner_Click(object sender, EventArgs e)
         {
+            EnableAnswers();
             Random r = new Random();
             int rInt = r.Next(0, 50); //for ints
 
@@ -291,9 +292,32 @@ namespace triviaCRACK
 
             }
         }
+        private void Winner()
+        {
+            MessageBox.Show("Player " + variables.currentPlayer + " wins! The others suck xD!");
+            this.Close();
+        }
 
+        private void DisableAnswers()
+        {
+            BTN_Tourner.Enabled = true;
+            BTN_CHOIX1.Enabled = false;
+            BTN_CHOIX2.Enabled = false;
+            BTN_CHOIX3.Enabled = false;
+            BTN_CHOIX4.Enabled = false;
+        }
+
+        private void EnableAnswers()
+        {
+            BTN_Tourner.Enabled = false;
+            BTN_CHOIX1.Enabled = true;
+            BTN_CHOIX2.Enabled = true;
+            BTN_CHOIX3.Enabled = true;
+            BTN_CHOIX4.Enabled = true;
+        }
         private void BTN_CHOIX1_Click(object sender, EventArgs e)
         {
+            DisableAnswers();
             OracleCommand cmd = new OracleCommand();
 
             //get question number ---- works
@@ -312,25 +336,43 @@ namespace triviaCRACK
 
             if(boss == "Y")
             {
+                label1.Text = "Bonne réponse!";
                 switch (variables.currentPlayer)
                 {
                     case 1:
                         progressBar1.PerformStep();
+                        if(progressBar1.Value == 5)
+                        {
+                            Winner();
+                        }
                         break;
                     case 2:
                         progressBar2.PerformStep();
+                        if (progressBar2.Value == 5)
+                        {
+                            Winner();
+                        }
                         break;
                     case 3:
                         progressBar3.PerformStep();
+                        if (progressBar3.Value == 5)
+                        {
+                            Winner();
+                        }
                         break;
                     case 4:
                         progressBar4.PerformStep();
+                        if (progressBar4.Value == 5)
+                        {
+                            Winner();
+                        }
                         break;
                 }
             }
             else
             {
-                if(variables.currentPlayer != variables.Players)
+                label1.Text = "Mauvaise réponse!";
+                if (variables.currentPlayer != variables.Players)
                 {
                     variables.currentPlayer++;
                 }
@@ -340,12 +382,12 @@ namespace triviaCRACK
                 }
 
             }
-            MessageBox.Show(boss);
             variables.answersNum.Clear();
         }
 
         private void BTN_CHOIX2_Click(object sender, EventArgs e)
         {
+            DisableAnswers();
             OracleCommand cmd = new OracleCommand();
 
             //get question number ---- works
@@ -364,24 +406,42 @@ namespace triviaCRACK
 
             if (boss == "Y")
             {
+                label1.Text = "Bonne réponse!";
                 switch (variables.currentPlayer)
                 {
                     case 1:
                         progressBar1.PerformStep();
+                        if (progressBar1.Value == 5)
+                        {
+                            Winner();
+                        }
                         break;
                     case 2:
                         progressBar2.PerformStep();
+                        if (progressBar2.Value == 5)
+                        {
+                            Winner();
+                        }
                         break;
                     case 3:
                         progressBar3.PerformStep();
+                        if (progressBar3.Value == 5)
+                        {
+                            Winner();
+                        }
                         break;
                     case 4:
                         progressBar4.PerformStep();
+                        if (progressBar4.Value == 5)
+                        {
+                            Winner();
+                        }
                         break;
                 }
             }
             else
             {
+                label1.Text = "Mauvaise réponse!";
                 if (variables.currentPlayer != variables.Players)
                 {
                     variables.currentPlayer++;
@@ -392,12 +452,12 @@ namespace triviaCRACK
                 }
 
             }
-            MessageBox.Show(boss);
             variables.answersNum.Clear();
         }
 
         private void BTN_CHOIX3_Click(object sender, EventArgs e)
         {
+            DisableAnswers();
             OracleCommand cmd = new OracleCommand();
 
             //get question number ---- works
@@ -416,24 +476,42 @@ namespace triviaCRACK
 
             if (boss == "Y")
             {
+                label1.Text = "Bonne réponse!";
                 switch (variables.currentPlayer)
                 {
                     case 1:
                         progressBar1.PerformStep();
+                        if (progressBar1.Value == 5)
+                        {
+                            Winner();
+                        }
                         break;
                     case 2:
                         progressBar2.PerformStep();
+                        if (progressBar2.Value == 5)
+                        {
+                            Winner();
+                        }
                         break;
                     case 3:
                         progressBar3.PerformStep();
+                        if (progressBar3.Value == 5)
+                        {
+                            Winner();
+                        }
                         break;
                     case 4:
                         progressBar4.PerformStep();
+                        if (progressBar4.Value == 5)
+                        {
+                            Winner();
+                        }
                         break;
                 }
             }
             else
             {
+                label1.Text = "Mauvaise réponse!";
                 if (variables.currentPlayer != variables.Players)
                 {
                     variables.currentPlayer++;
@@ -444,12 +522,12 @@ namespace triviaCRACK
                 }
 
             }
-            MessageBox.Show(boss);
             variables.answersNum.Clear();
         }
 
         private void BTN_CHOIX4_Click(object sender, EventArgs e)
         {
+            DisableAnswers();
             OracleCommand cmd = new OracleCommand();
 
             //get question number ---- works
@@ -468,24 +546,42 @@ namespace triviaCRACK
 
             if (boss == "Y")
             {
+                label1.Text = "Bonne réponse!";
                 switch (variables.currentPlayer)
                 {
                     case 1:
                         progressBar1.PerformStep();
+                        if (progressBar1.Value == 5)
+                        {
+                            Winner();
+                        }
                         break;
                     case 2:
                         progressBar2.PerformStep();
+                        if (progressBar2.Value == 5)
+                        {
+                            Winner();
+                        }
                         break;
                     case 3:
                         progressBar3.PerformStep();
+                        if (progressBar3.Value == 5)
+                        {
+                            Winner();
+                        }
                         break;
                     case 4:
                         progressBar4.PerformStep();
+                        if (progressBar4.Value == 5)
+                        {
+                            Winner();
+                        }
                         break;
                 }
             }
             else
             {
+                label1.Text = "Mauvaise réponse!";
                 if (variables.currentPlayer != variables.Players)
                 {
                     variables.currentPlayer++;
@@ -496,7 +592,6 @@ namespace triviaCRACK
                 }
 
             }
-            MessageBox.Show(boss);
             variables.answersNum.Clear();
         }
     }
