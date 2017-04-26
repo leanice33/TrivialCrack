@@ -1,8 +1,5 @@
 # TrivialCrack
 
-Please no copy pasterino
+Please no copy pasterino pistachio
 
 Check master
-
-Missing:
-When one of the progress bars value == max show who won 
