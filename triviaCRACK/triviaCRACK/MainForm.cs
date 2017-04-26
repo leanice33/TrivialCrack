@@ -25,9 +25,32 @@ namespace triviaCRACK
             InitializeComponent();
             Connect();
             InitiatePlayers(variables.Players);
+            PlayerThread();
         }
 
-
+        private void PlayerThread()
+        {
+            Task t = Task.Run(() => {
+                while (true)
+                {
+                    switch (variables.currentPlayer)
+                    {
+                        case 1:
+                            LBL_TOURAQUELJOUEUR.Text = "Joueur 1";
+                            break;
+                        case 2:
+                            LBL_TOURAQUELJOUEUR.Text = "Joueur 2";
+                            break;
+                        case 3:
+                            LBL_TOURAQUELJOUEUR.Text = "Joueur 3";
+                            break;
+                        case 4:
+                            LBL_TOURAQUELJOUEUR.Text = "Joueur 4";
+                            break;
+                    }
+                }            
+            });
+        }
         private void InitiatePlayers(int x)
         {
             Username choose;
@@ -183,9 +206,10 @@ namespace triviaCRACK
                 OracleDataReader oraread;
                 oraread = cmd.ExecuteReader();
                 while (oraread.Read())
-                {
+                {               
                     variables.answers.Add(oraread.GetString(1));
-                    //todo getstring(0) aka answer's number into answersNum list to check for correct answer later
+                    //getstring(0) aka answer's number into answersNum list to check for correct answer later
+                    variables.answersNum.Add(oraread.GetString(0));
                 }
                 //changing buttons text to answers
                 for(int i = 0; i < variables.answers.Count; ++i)
@@ -266,6 +290,214 @@ namespace triviaCRACK
 
 
             }
+        }
+
+        private void BTN_CHOIX1_Click(object sender, EventArgs e)
+        {
+            OracleCommand cmd = new OracleCommand();
+
+            //get question number ---- works
+            cmd.Connection = objConn;
+            cmd.CommandText = "GESTIONQUESTION.bonnereponse";
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.Add("estbonne", OracleDbType.Char, 1);
+            cmd.Parameters["estbonne"].Direction = ParameterDirection.ReturnValue;
+
+            cmd.Parameters.Add("numreponse", OracleDbType.Char);
+            cmd.Parameters["numreponse"].Value = variables.answersNum[0];
+
+            cmd.ExecuteNonQuery();
+            string boss = cmd.Parameters["estbonne"].Value.ToString();
+
+            if(boss == "Y")
+            {
+                switch (variables.currentPlayer)
+                {
+                    case 1:
+                        progressBar1.PerformStep();
+                        break;
+                    case 2:
+                        progressBar2.PerformStep();
+                        break;
+                    case 3:
+                        progressBar3.PerformStep();
+                        break;
+                    case 4:
+                        progressBar4.PerformStep();
+                        break;
+                }
+            }
+            else
+            {
+                if(variables.currentPlayer != variables.Players)
+                {
+                    variables.currentPlayer++;
+                }
+                else
+                {
+                    variables.currentPlayer = 1;
+                }
+
+            }
+            MessageBox.Show(boss);
+            variables.answersNum.Clear();
+        }
+
+        private void BTN_CHOIX2_Click(object sender, EventArgs e)
+        {
+            OracleCommand cmd = new OracleCommand();
+
+            //get question number ---- works
+            cmd.Connection = objConn;
+            cmd.CommandText = "GESTIONQUESTION.bonnereponse";
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.Add("estbonne", OracleDbType.Char, 1);
+            cmd.Parameters["estbonne"].Direction = ParameterDirection.ReturnValue;
+
+            cmd.Parameters.Add("numreponse", OracleDbType.Char);
+            cmd.Parameters["numreponse"].Value = variables.answersNum[1];
+
+            cmd.ExecuteNonQuery();
+            string boss = cmd.Parameters["estbonne"].Value.ToString();
+
+            if (boss == "Y")
+            {
+                switch (variables.currentPlayer)
+                {
+                    case 1:
+                        progressBar1.PerformStep();
+                        break;
+                    case 2:
+                        progressBar2.PerformStep();
+                        break;
+                    case 3:
+                        progressBar3.PerformStep();
+                        break;
+                    case 4:
+                        progressBar4.PerformStep();
+                        break;
+                }
+            }
+            else
+            {
+                if (variables.currentPlayer != variables.Players)
+                {
+                    variables.currentPlayer++;
+                }
+                else
+                {
+                    variables.currentPlayer = 1;
+                }
+
+            }
+            MessageBox.Show(boss);
+            variables.answersNum.Clear();
+        }
+
+        private void BTN_CHOIX3_Click(object sender, EventArgs e)
+        {
+            OracleCommand cmd = new OracleCommand();
+
+            //get question number ---- works
+            cmd.Connection = objConn;
+            cmd.CommandText = "GESTIONQUESTION.bonnereponse";
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.Add("estbonne", OracleDbType.Char, 1);
+            cmd.Parameters["estbonne"].Direction = ParameterDirection.ReturnValue;
+
+            cmd.Parameters.Add("numreponse", OracleDbType.Char);
+            cmd.Parameters["numreponse"].Value = variables.answersNum[2];
+
+            cmd.ExecuteNonQuery();
+            string boss = cmd.Parameters["estbonne"].Value.ToString();
+
+            if (boss == "Y")
+            {
+                switch (variables.currentPlayer)
+                {
+                    case 1:
+                        progressBar1.PerformStep();
+                        break;
+                    case 2:
+                        progressBar2.PerformStep();
+                        break;
+                    case 3:
+                        progressBar3.PerformStep();
+                        break;
+                    case 4:
+                        progressBar4.PerformStep();
+                        break;
+                }
+            }
+            else
+            {
+                if (variables.currentPlayer != variables.Players)
+                {
+                    variables.currentPlayer++;
+                }
+                else
+                {
+                    variables.currentPlayer = 1;
+                }
+
+            }
+            MessageBox.Show(boss);
+            variables.answersNum.Clear();
+        }
+
+        private void BTN_CHOIX4_Click(object sender, EventArgs e)
+        {
+            OracleCommand cmd = new OracleCommand();
+
+            //get question number ---- works
+            cmd.Connection = objConn;
+            cmd.CommandText = "GESTIONQUESTION.bonnereponse";
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.Add("estbonne", OracleDbType.Char, 1);
+            cmd.Parameters["estbonne"].Direction = ParameterDirection.ReturnValue;
+
+            cmd.Parameters.Add("numreponse", OracleDbType.Char);
+            cmd.Parameters["numreponse"].Value = variables.answersNum[3];
+
+            cmd.ExecuteNonQuery();
+            string boss = cmd.Parameters["estbonne"].Value.ToString();
+
+            if (boss == "Y")
+            {
+                switch (variables.currentPlayer)
+                {
+                    case 1:
+                        progressBar1.PerformStep();
+                        break;
+                    case 2:
+                        progressBar2.PerformStep();
+                        break;
+                    case 3:
+                        progressBar3.PerformStep();
+                        break;
+                    case 4:
+                        progressBar4.PerformStep();
+                        break;
+                }
+            }
+            else
+            {
+                if (variables.currentPlayer != variables.Players)
+                {
+                    variables.currentPlayer++;
+                }
+                else
+                {
+                    variables.currentPlayer = 1;
+                }
+
+            }
+            MessageBox.Show(boss);
+            variables.answersNum.Clear();
         }
     }
 }

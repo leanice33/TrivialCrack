@@ -20,5 +20,7 @@ namespace triviaCRACK
         public static List<string> answersNum = new List<string>();
         //num question
         public static string numQuestion;
+        //current player
+        public static int currentPlayer = 1;
     }
 }
