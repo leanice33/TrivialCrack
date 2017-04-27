@@ -346,7 +346,7 @@
             // LBL_TOURAQUELJOUEUR
             // 
             this.LBL_TOURAQUELJOUEUR.AutoSize = true;
-            this.LBL_TOURAQUELJOUEUR.Location = new System.Drawing.Point(87, 238);
+            this.LBL_TOURAQUELJOUEUR.Location = new System.Drawing.Point(82, 238);
             this.LBL_TOURAQUELJOUEUR.Name = "LBL_TOURAQUELJOUEUR";
             this.LBL_TOURAQUELJOUEUR.Size = new System.Drawing.Size(141, 13);
             this.LBL_TOURAQUELJOUEUR.TabIndex = 15;
