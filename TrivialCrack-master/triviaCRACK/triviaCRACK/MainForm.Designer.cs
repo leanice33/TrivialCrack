@@ -56,6 +56,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.LBL_TOURAQUELJOUEUR = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Yellow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Blue)).BeginInit();
@@ -207,11 +208,11 @@
             // LBL_White
             // 
             this.LBL_White.AutoSize = true;
-            this.LBL_White.Location = new System.Drawing.Point(331, 158);
+            this.LBL_White.Location = new System.Drawing.Point(318, 158);
             this.LBL_White.Name = "LBL_White";
-            this.LBL_White.Size = new System.Drawing.Size(47, 13);
+            this.LBL_White.Size = new System.Drawing.Size(57, 13);
             this.LBL_White.TabIndex = 6;
-            this.LBL_White.Text = "Random";
+            this.LBL_White.Text = "Ton choix!";
             // 
             // LBL_Blue
             // 
@@ -277,9 +278,8 @@
             this.lb_question.Location = new System.Drawing.Point(43, 25);
             this.lb_question.MaximumSize = new System.Drawing.Size(250, 100);
             this.lb_question.Name = "lb_question";
-            this.lb_question.Size = new System.Drawing.Size(61, 13);
+            this.lb_question.Size = new System.Drawing.Size(0, 13);
             this.lb_question.TabIndex = 9;
-            this.lb_question.Text = "lb_question";
             this.lb_question.Visible = false;
             // 
             // BTN_CHOIX1
@@ -332,12 +332,13 @@
             // 
             // panel2
             // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.Controls.Add(this.lb_question);
             this.panel2.Controls.Add(this.BTN_CHOIX4);
             this.panel2.Controls.Add(this.BTN_CHOIX1);
             this.panel2.Controls.Add(this.BTN_CHOIX3);
             this.panel2.Controls.Add(this.BTN_CHOIX2);
-            this.panel2.Location = new System.Drawing.Point(65, 300);
+            this.panel2.Location = new System.Drawing.Point(41, 282);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(390, 349);
             this.panel2.TabIndex = 14;
@@ -360,12 +361,22 @@
             this.label1.Size = new System.Drawing.Size(0, 13);
             this.label1.TabIndex = 14;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(34, 238);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(47, 13);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "Tour au ";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(645, 656);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.LBL_TOURAQUELJOUEUR);
             this.Controls.Add(this.GB_P4);
@@ -429,5 +440,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label LBL_TOURAQUELJOUEUR;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

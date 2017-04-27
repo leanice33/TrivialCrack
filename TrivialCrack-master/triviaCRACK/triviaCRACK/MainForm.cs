@@ -166,7 +166,13 @@ namespace triviaCRACK
             }
 
         }
-
+         private void MakeAllLabelsVisible()
+        {
+            LBL_Blue.Visible = true;
+            LBL_Green.Visible = true;
+            LBL_Red.Visible = true;
+            LBL_Yellow.Visible = true;
+        }
         //works
         private void ShowReponses(string x)
         {
@@ -288,11 +294,14 @@ namespace triviaCRACK
                 if (j == 2)
                 {
                     HideAllCats();
+                    LBL_White.Font = new Font("Times New Roman", 12, FontStyle.Bold);
                     LBL_White.Show();
                     EnablePicBoxes();
+                    MakeAllLabelsVisible();
 
-                    
-      
+
+
+
                 }
                 if (j == 3)
                 {
@@ -314,8 +323,9 @@ namespace triviaCRACK
         }
         private void Winner()
         {
-            MessageBox.Show("Player " + variables.currentPlayer + " wins! The others suck xD!");
+            MessageBox.Show("Player " + variables.currentPlayer + " wins! The others lose!");
             this.Close();
+            
         }
 
         private void DisableAnswers()
@@ -639,5 +649,7 @@ namespace triviaCRACK
             ShowQuestion("J");
             DisablePicBoxes();
         }
+
+    
     }
 }
