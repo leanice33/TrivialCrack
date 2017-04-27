@@ -84,24 +84,29 @@
             // PB_Yellow
             // 
             this.PB_Yellow.BackColor = System.Drawing.Color.Gold;
+            this.PB_Yellow.Enabled = false;
             this.PB_Yellow.Location = new System.Drawing.Point(437, 0);
             this.PB_Yellow.Name = "PB_Yellow";
             this.PB_Yellow.Size = new System.Drawing.Size(104, 100);
             this.PB_Yellow.TabIndex = 1;
             this.PB_Yellow.TabStop = false;
+            this.PB_Yellow.Click += new System.EventHandler(this.PB_Yellow_Click);
             // 
             // PB_Blue
             // 
             this.PB_Blue.BackColor = System.Drawing.Color.Blue;
+            this.PB_Blue.Enabled = false;
             this.PB_Blue.Location = new System.Drawing.Point(323, 0);
             this.PB_Blue.Name = "PB_Blue";
             this.PB_Blue.Size = new System.Drawing.Size(115, 100);
             this.PB_Blue.TabIndex = 1;
             this.PB_Blue.TabStop = false;
+            this.PB_Blue.Click += new System.EventHandler(this.PB_Blue_Click);
             // 
             // PB_White
             // 
             this.PB_White.BackColor = System.Drawing.Color.FloralWhite;
+            this.PB_White.Enabled = false;
             this.PB_White.Location = new System.Drawing.Point(215, 0);
             this.PB_White.Name = "PB_White";
             this.PB_White.Size = new System.Drawing.Size(108, 100);
@@ -111,15 +116,18 @@
             // PB_RED
             // 
             this.PB_RED.BackColor = System.Drawing.Color.Red;
+            this.PB_RED.Enabled = false;
             this.PB_RED.Location = new System.Drawing.Point(107, 0);
             this.PB_RED.Name = "PB_RED";
             this.PB_RED.Size = new System.Drawing.Size(108, 100);
             this.PB_RED.TabIndex = 1;
             this.PB_RED.TabStop = false;
+            this.PB_RED.Click += new System.EventHandler(this.PB_RED_Click);
             // 
             // PB_Green
             // 
             this.PB_Green.BackColor = System.Drawing.Color.Green;
+            this.PB_Green.Enabled = false;
             this.PB_Green.Location = new System.Drawing.Point(0, 0);
             this.PB_Green.Name = "PB_Green";
             this.PB_Green.Size = new System.Drawing.Size(108, 100);

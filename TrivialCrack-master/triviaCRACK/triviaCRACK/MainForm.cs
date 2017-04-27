@@ -133,13 +133,7 @@ namespace triviaCRACK
             LBL_Blue.Hide();
         }
 
-        private void EnablePB()
-        {
-            PB_Blue.MouseClick += new MouseEventHandler();
-            PB_Green.MouseClick += new MouseEventHandler(your_event_handler);
-            PB_RED.MouseClick += new MouseEventHandler(your_event_handler);
-            PB_Yellow.MouseClick += new MouseEventHandler(your_event_handler);
-        }
+        
         //works
         private void ShowQuestion(string x)
         {
@@ -251,6 +245,23 @@ namespace triviaCRACK
             }
             
         }
+
+        private void EnablePicBoxes()
+        {
+            PB_Blue.Enabled = true;
+            PB_Green.Enabled = true;
+            PB_RED.Enabled = true;
+            PB_Yellow.Enabled = true;
+        }
+
+        private void DisablePicBoxes()
+        {
+            PB_Blue.Enabled = false;
+            PB_Green.Enabled = false;
+            PB_RED.Enabled = false;
+            PB_Yellow.Enabled = false;
+        }
+
         private void BTN_Tourner_Click(object sender, EventArgs e)
         {
             EnableAnswers();
@@ -278,9 +289,10 @@ namespace triviaCRACK
                 {
                     HideAllCats();
                     LBL_White.Show();
-                    //todo choose any category
-                    if (i == rInt - 1)
-                        ShowQuestion("V");
+                    EnablePicBoxes();
+
+                    
+      
                 }
                 if (j == 3)
                 {
@@ -601,6 +613,31 @@ namespace triviaCRACK
 
             }
             variables.answersNum.Clear();
+        }
+
+        private void PB_Green_Click(object sender, EventArgs e)
+        {
+            ShowQuestion("V");
+            DisablePicBoxes();
+        }
+
+        private void PB_RED_Click(object sender, EventArgs e)
+        {
+            ShowQuestion("R");
+            DisablePicBoxes();
+        }
+
+        private void PB_Blue_Click(object sender, EventArgs e)
+        {
+            ShowQuestion("B");
+            DisablePicBoxes();
+
+        }
+
+        private void PB_Yellow_Click(object sender, EventArgs e)
+        {
+            ShowQuestion("J");
+            DisablePicBoxes();
         }
     }
 }
