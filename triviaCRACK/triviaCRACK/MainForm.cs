@@ -121,7 +121,12 @@ namespace triviaCRACK
             //clear table 
             OracleCommand cmd = new OracleCommand(query, objConn);
             cmd.ExecuteNonQuery();
-            MessageBox.Show(objConn.State.ToString());
+
+
+            cmd = new OracleCommand();
+            cmd.Connection = objConn;
+            cmd.CommandText = "Update questions set flag ='X' where flag='Y'";
+            cmd.ExecuteNonQuery();
 
         }
         private void HideAllCats()
@@ -132,6 +137,8 @@ namespace triviaCRACK
             LBL_White.Hide();
             LBL_Blue.Hide();
         }
+
+        
         //works
         private void ShowQuestion(string x)
         {
@@ -164,7 +171,13 @@ namespace triviaCRACK
             }
 
         }
-
+         private void MakeAllLabelsVisible()
+        {
+            LBL_Blue.Visible = true;
+            LBL_Green.Visible = true;
+            LBL_Red.Visible = true;
+            LBL_Yellow.Visible = true;
+        }
         //works
         private void ShowReponses(string x)
         {
@@ -189,6 +202,11 @@ namespace triviaCRACK
                 string numquestion = cmd.Parameters["numquestion"].Value.ToString();
                 //remove whitespace
                 numquestion = numquestion.Replace(" ", "");
+
+                cmd = new OracleCommand();
+                cmd.Connection = objConn;
+                cmd.CommandText = "Update questions set flag ='Y' where numquestion='" + numquestion + "'";
+                cmd.ExecuteNonQuery();
 
                 cmd = new OracleCommand();
                 //get answers --- works
@@ -243,6 +261,23 @@ namespace triviaCRACK
             }
             
         }
+
+        private void EnablePicBoxes()
+        {
+            PB_Blue.Enabled = true;
+            PB_Green.Enabled = true;
+            PB_RED.Enabled = true;
+            PB_Yellow.Enabled = true;
+        }
+
+        private void DisablePicBoxes()
+        {
+            PB_Blue.Enabled = false;
+            PB_Green.Enabled = false;
+            PB_RED.Enabled = false;
+            PB_Yellow.Enabled = false;
+        }
+
         private void BTN_Tourner_Click(object sender, EventArgs e)
         {
             EnableAnswers();
@@ -269,10 +304,14 @@ namespace triviaCRACK
                 if (j == 2)
                 {
                     HideAllCats();
+                    LBL_White.Font = new Font("Times New Roman", 12, FontStyle.Bold);
                     LBL_White.Show();
-                    //todo choose any category
-                    if (i == rInt - 1)
-                        ShowQuestion("V");
+                    EnablePicBoxes();
+                    MakeAllLabelsVisible();
+
+
+
+
                 }
                 if (j == 3)
                 {
@@ -294,8 +333,9 @@ namespace triviaCRACK
         }
         private void Winner()
         {
-            MessageBox.Show("Player " + variables.currentPlayer + " wins! The others suck xD!");
+            MessageBox.Show("Player " + variables.currentPlayer + " wins! The others lose!");
             this.Close();
+            
         }
 
         private void DisableAnswers()
@@ -594,5 +634,32 @@ namespace triviaCRACK
             }
             variables.answersNum.Clear();
         }
+
+        private void PB_Green_Click(object sender, EventArgs e)
+        {
+            ShowQuestion("V");
+            DisablePicBoxes();
+        }
+
+        private void PB_RED_Click(object sender, EventArgs e)
+        {
+            ShowQuestion("R");
+            DisablePicBoxes();
+        }
+
+        private void PB_Blue_Click(object sender, EventArgs e)
+        {
+            ShowQuestion("B");
+            DisablePicBoxes();
+
+        }
+
+        private void PB_Yellow_Click(object sender, EventArgs e)
+        {
+            ShowQuestion("J");
+            DisablePicBoxes();
+        }
+
+    
     }
 }

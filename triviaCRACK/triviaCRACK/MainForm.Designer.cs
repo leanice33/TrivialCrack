@@ -56,6 +56,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.LBL_TOURAQUELJOUEUR = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Yellow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Blue)).BeginInit();
@@ -84,24 +85,29 @@
             // PB_Yellow
             // 
             this.PB_Yellow.BackColor = System.Drawing.Color.Gold;
+            this.PB_Yellow.Enabled = false;
             this.PB_Yellow.Location = new System.Drawing.Point(437, 0);
             this.PB_Yellow.Name = "PB_Yellow";
             this.PB_Yellow.Size = new System.Drawing.Size(104, 100);
             this.PB_Yellow.TabIndex = 1;
             this.PB_Yellow.TabStop = false;
+            this.PB_Yellow.Click += new System.EventHandler(this.PB_Yellow_Click);
             // 
             // PB_Blue
             // 
             this.PB_Blue.BackColor = System.Drawing.Color.Blue;
+            this.PB_Blue.Enabled = false;
             this.PB_Blue.Location = new System.Drawing.Point(323, 0);
             this.PB_Blue.Name = "PB_Blue";
             this.PB_Blue.Size = new System.Drawing.Size(115, 100);
             this.PB_Blue.TabIndex = 1;
             this.PB_Blue.TabStop = false;
+            this.PB_Blue.Click += new System.EventHandler(this.PB_Blue_Click);
             // 
             // PB_White
             // 
             this.PB_White.BackColor = System.Drawing.Color.FloralWhite;
+            this.PB_White.Enabled = false;
             this.PB_White.Location = new System.Drawing.Point(215, 0);
             this.PB_White.Name = "PB_White";
             this.PB_White.Size = new System.Drawing.Size(108, 100);
@@ -111,15 +117,18 @@
             // PB_RED
             // 
             this.PB_RED.BackColor = System.Drawing.Color.Red;
+            this.PB_RED.Enabled = false;
             this.PB_RED.Location = new System.Drawing.Point(107, 0);
             this.PB_RED.Name = "PB_RED";
             this.PB_RED.Size = new System.Drawing.Size(108, 100);
             this.PB_RED.TabIndex = 1;
             this.PB_RED.TabStop = false;
+            this.PB_RED.Click += new System.EventHandler(this.PB_RED_Click);
             // 
             // PB_Green
             // 
             this.PB_Green.BackColor = System.Drawing.Color.Green;
+            this.PB_Green.Enabled = false;
             this.PB_Green.Location = new System.Drawing.Point(0, 0);
             this.PB_Green.Name = "PB_Green";
             this.PB_Green.Size = new System.Drawing.Size(108, 100);
@@ -129,6 +138,7 @@
             // GB_P1
             // 
             this.GB_P1.Controls.Add(this.progressBar1);
+            this.GB_P1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.GB_P1.Location = new System.Drawing.Point(474, 300);
             this.GB_P1.Name = "GB_P1";
             this.GB_P1.Size = new System.Drawing.Size(128, 63);
@@ -148,6 +158,7 @@
             // GB_P2
             // 
             this.GB_P2.Controls.Add(this.progressBar2);
+            this.GB_P2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.GB_P2.Location = new System.Drawing.Point(474, 381);
             this.GB_P2.Name = "GB_P2";
             this.GB_P2.Size = new System.Drawing.Size(128, 63);
@@ -166,6 +177,8 @@
             // 
             // BTN_Tourner
             // 
+            this.BTN_Tourner.FlatAppearance.BorderSize = 0;
+            this.BTN_Tourner.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BTN_Tourner.Location = new System.Drawing.Point(457, 205);
             this.BTN_Tourner.Name = "BTN_Tourner";
             this.BTN_Tourner.Size = new System.Drawing.Size(159, 78);
@@ -195,11 +208,11 @@
             // LBL_White
             // 
             this.LBL_White.AutoSize = true;
-            this.LBL_White.Location = new System.Drawing.Point(331, 158);
+            this.LBL_White.Location = new System.Drawing.Point(318, 158);
             this.LBL_White.Name = "LBL_White";
-            this.LBL_White.Size = new System.Drawing.Size(47, 13);
+            this.LBL_White.Size = new System.Drawing.Size(57, 13);
             this.LBL_White.TabIndex = 6;
-            this.LBL_White.Text = "Random";
+            this.LBL_White.Text = "Ton choix!";
             // 
             // LBL_Blue
             // 
@@ -222,6 +235,7 @@
             // GB_P3
             // 
             this.GB_P3.Controls.Add(this.progressBar3);
+            this.GB_P3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.GB_P3.Location = new System.Drawing.Point(474, 468);
             this.GB_P3.Name = "GB_P3";
             this.GB_P3.Size = new System.Drawing.Size(128, 63);
@@ -241,6 +255,7 @@
             // GB_P4
             // 
             this.GB_P4.Controls.Add(this.progressBar4);
+            this.GB_P4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.GB_P4.Location = new System.Drawing.Point(474, 551);
             this.GB_P4.Name = "GB_P4";
             this.GB_P4.Size = new System.Drawing.Size(128, 62);
@@ -263,9 +278,8 @@
             this.lb_question.Location = new System.Drawing.Point(43, 25);
             this.lb_question.MaximumSize = new System.Drawing.Size(250, 100);
             this.lb_question.Name = "lb_question";
-            this.lb_question.Size = new System.Drawing.Size(61, 13);
+            this.lb_question.Size = new System.Drawing.Size(0, 13);
             this.lb_question.TabIndex = 9;
-            this.lb_question.Text = "lb_question";
             this.lb_question.Visible = false;
             // 
             // BTN_CHOIX1
@@ -318,12 +332,13 @@
             // 
             // panel2
             // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.Controls.Add(this.lb_question);
             this.panel2.Controls.Add(this.BTN_CHOIX4);
             this.panel2.Controls.Add(this.BTN_CHOIX1);
             this.panel2.Controls.Add(this.BTN_CHOIX3);
             this.panel2.Controls.Add(this.BTN_CHOIX2);
-            this.panel2.Location = new System.Drawing.Point(65, 300);
+            this.panel2.Location = new System.Drawing.Point(41, 282);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(390, 349);
             this.panel2.TabIndex = 14;
@@ -331,7 +346,7 @@
             // LBL_TOURAQUELJOUEUR
             // 
             this.LBL_TOURAQUELJOUEUR.AutoSize = true;
-            this.LBL_TOURAQUELJOUEUR.Location = new System.Drawing.Point(87, 238);
+            this.LBL_TOURAQUELJOUEUR.Location = new System.Drawing.Point(82, 238);
             this.LBL_TOURAQUELJOUEUR.Name = "LBL_TOURAQUELJOUEUR";
             this.LBL_TOURAQUELJOUEUR.Size = new System.Drawing.Size(141, 13);
             this.LBL_TOURAQUELJOUEUR.TabIndex = 15;
@@ -346,11 +361,22 @@
             this.label1.Size = new System.Drawing.Size(0, 13);
             this.label1.TabIndex = 14;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(34, 238);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(47, 13);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "Tour au ";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(645, 656);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.LBL_TOURAQUELJOUEUR);
             this.Controls.Add(this.GB_P4);
@@ -414,5 +440,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label LBL_TOURAQUELJOUEUR;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
